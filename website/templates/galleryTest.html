@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %} Kavita Lama{% endblock %}
+{% block content %}
+
+
+
+  <!-- Header: Showcase -->
+  <header id="showcase">
+    <div class="showcase-content">
+      <h1 class="m-heading">
+        Hi Gorgeous!
+      </h1>
+      <p class="lead">
+        We will make you look your best and feel sensational
+      </p>
+    </div>
+  </header>
+
+  <!-- Section: What We Do -->
+  
+
+  <!-- Section: Who We Are -->
+  <section id="who">
+    <div class="who-text bg-palette p-3">
+      
+      <h2 class="m-heading" ><span class="text-primary1">Make Up</span> Artist</h2>
+      <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore maiores odit a ipsum ratione quas! Odit saepe minima architecto vitae quam asperiores nobis dolor laboriosam cupiditate. Rerum rem porro voluptatum? Dolores maxime ut architecto corporis itaque, aliquid deleniti. Fugit perferendis nemo voluptas facere consequuntur ratione quod esse pariatur velit ex!</p>
+      <a href="#contact" class="btn">Book appointment</a>
+    </div>
+    <div class="who-img"></div>
+  </section>
+
+  <!-- Section: Clients -->
+  <section id="clients" class="py-1">
+    <div class="container">
+      <h2 class="m-heading text-center">
+        <span class="text-primary1">Our</span> <span style="font-family: Satisfy;">Services</span>
+      </h2>
+      <div class="items py-1">
+        <div>
+          <h1>Bridal Make up</h1>
+          <p>We make you beautiful at your wedding. Make you feel the most beautiful.</p>
+        </div>
+        <div>
+          <h1>Special Ocassion Make up</h1>
+          <p>We also have various kits and styles to look you pretty and sassy.</p>
+        </div>
+        <div>
+          <h1>Party Make up</h1>
+          <p>We understand at party you want to look best. We are here for you.</p>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Contact -->
+  <section id="contact">
+    <div class="contact-form bg-palette p-2">
+      <h2 class="f-heading text-center">Contact Us</h2>
+      
+      <form action="/mail_customer_data" method="POST">
+        <div class="form-group">
+          <label for="name" class="f-label">Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+          <label for="email" class="f-label">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+          <label for="phone" class="f-label">Phone Number</label>
+          <input type="text" name="phone" id="phone" placeholder="Enter Phone Number">
+        </div>
+        <div class="form-group">
+          <label for="message" class="f-label">Message</label>
+          <textarea name="message" id="message" placeholder="Enter Message"></textarea>
+        </div>
+        <input type="submit" value="Send" class="btn">
+      </form>
+    </div>
+    <div class="makeup"></div>
+  </section>
+
+{% endblock %}
+
+{% block navcolScript%}
+<script>
+  var navbar = document.getElementById("navbar");
+  navbar.style.backgroundColor = '#ec7ead';
+</script>
+{% endblock %}
