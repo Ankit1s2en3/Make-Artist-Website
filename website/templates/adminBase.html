@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/d7adfe4a11.js" crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="{{ url_for('static', filename='css/mobile.css') }}">
+  <link rel="stylesheet" media="screen and (min-width: 1100px)" href="{{ url_for('static', filename='css/widescreen.css') }}">
+  
+  <script src="/static/scripts/galleryJS.js"></script>
+  <link rel="stylesheet" href="/static/css/galleryCss.css">
+
+  <title>{% block title %} {% endblock %}</title>
+
+</head>
+<body id="home">
+  <!-- Navbar -->
+  <nav id="navbar" >
+    <h1 class="logo my-auto"> 
+      <span class="text-primary1">
+        
+        <i class='fas fa-spa' ></i>Kavita</span>Lama
+    </h1>
+    <ul class="my-auto" style="font-family:Satisfy;">
+        {% if user.is_authenticated %}
+            <li><a href="/adminHome">Home</a></li>
+            <li><a href="/uploadPhotos">Edit</a></li>
+            <li><a href="/mails">Mails</a></li>
+            <li><a href="/logout">Logout</a></li>
+        {% endif %}
+
+
+    </ul>
+  </nav>
+
+  
+
+
+  {% block content %}{% endblock %}
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+   {% for category, message in messages %}
+    {% if category == 'error' %}
+ <div class="alert alert-danger alter-dismissable fade show" role="alert" >
+   {{ message }}
+   <button type="button" class="close" data-dismiss="alert">
+     <span aria-hidden="true">&times;</span>
+   </button>
+  </div>
+  {% else %}
+  <div class="alert alert-success alter-dismissable fade show" role="alert">
+   {{ message }}
+   <button type="button" class="close" data-dismiss="alert">
+     <span aria-hidden="true">&times;</span>
+   </button>
+  </div>
+  {% endif %} {% endfor %} {% endif %} {% endwith %}
+ 
+
+  <footer class="bg-dark text-center text-white">          
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      
+      <a class=" btn-outline-light  m-4" href="#!" role="button"
+      ><i class="fab fa-facebook-f"></i
+    ></a>
+
+    <!-- Twitter -->
+    <a class=" btn-outline-light  m-4" href="#!" role="button"
+      ><i class="fab fa-twitter"></i
+    ></a>
+
+    <!-- Google -->
+    <a class=" btn-outline-light  m-4" href="#!" role="button"
+      ><i class="fab fa-google"></i
+    ></a>
+
+    <!-- Instagram -->
+    <a class="btn-outline-light  m-4" href="https://www.instagram.com/makeupbykavitalama_" role="button"
+      ><i class="fab fa-instagram"></i
+    ></a>
+
+    <!-- Linkedin -->
+    <a class="btn-outline-light m-4" href="#!" role="button"
+      ><i class="fab fa-linkedin-in"></i
+    ></a>
+
+    <!-- Github -->
+    <a class="btn-outline-light  m-4" href="#!" role="button"
+      ><i class="fab fa-github"></i
+    ></a>
+      <a class="text-white" href="/"><p>Copyright &copy; 2022, Make Up Artist Kavita Lama, All Rights Reserved</p></a>
+    </div>
+
+    <!-- Grid container -->
+
+<!-- Copyright -->
+</footer>
+{% block navcolScript%} {% endblock %}
+  <!-- JQuery CDN -->
+
+  <!-- Local JS File -->
+  <script src="{{ url_for('static', filename='scripts/methods.js') }}"></script>
+
+
+</body>
+</html>

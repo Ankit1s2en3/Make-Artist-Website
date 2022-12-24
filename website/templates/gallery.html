@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Kavita Lama{% endblock %}
+{% block content %}
+
+<p class="heading text-center">Make Up By Kavita Lama</p><hr>
+<div id="gallery" class="container-fluid">  
+      
+  {% for img in images %}
+      <img src= "{{'./static/images/'+img}}" class="img-responsive">
+  {% endfor %}
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block navcolScript%}
+<script>
+  var navbar = document.getElementById("navbar");
+  navbar.style.backgroundColor = '#ec7ead';
+</script>
+{% endblock %}
